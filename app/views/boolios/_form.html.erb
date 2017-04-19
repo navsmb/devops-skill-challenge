@@ -1,0 +1,16 @@
+<br />
+<%= form_for @boolio do |f| %>
+  <div class="row">
+    <fieldset class="small-6 columns">
+      <div class="switch stretch">
+        <%= f.check_box :val, class: 'switch-input' %>
+        <%= f.label :val, class: 'switch-paddle' do %>
+          <span class="switch-active" aria-hidden="true">True</span>
+          <span class="switch-inactive" aria-hidden="true">False</span>
+        <% end %>
+      </div>
+    </fieldset>
+  </div>
+  <br/ >
+  <%= f.submit 'Save', class: 'button success' %>
+<% end %>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <!--
+    ========================================================
+    This pattern is downloaded from www.subtlepatterns.com 
+    If you need more, that's where to get'em.
+    ========================================================
+    -->
+
+    <div id="application" class="row">
+      <div class="small-12 columns">
+        <%= yield %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="small-12 columns">
+        <div id="server" class="callout"><%= ENV['HOST_OS'] || 'Unknown' %>: <%= ENV['HOST_IP'] || 'Address' %></div>
+      </div>
+    </div>
+
+  </body>
+</html>

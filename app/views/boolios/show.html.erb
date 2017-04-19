@@ -1,0 +1,25 @@
+<% if notice %><div class="callout primary"><%= notice %></div><% end %>
+
+<h3>Boolean <span class="subheader"><%= @boolio.api_id %></span></h3>
+
+<p>
+  Value: 
+  <% if @boolio.val %>
+    <span class="success label">TRUE</span>
+  <% else %>
+    <span class="alert label">FALSE</span>
+  <% end %>
+</p>
+
+<% if( @image ) %>
+<p>
+  <img src="<%= @image.fixed_height.url %>" />
+</p>
+<% end %>
+
+<br/>
+
+<div class="button-group">
+  <%= link_to boolios_path, class: 'button hollow' do %><i class="fi-arrow-left"></i> Back <% end %>
+  <%= link_to edit_boolio_path(@boolio), class: 'button' do %><i class="fi-pencil"></i> Edit <% end %>
+</div>

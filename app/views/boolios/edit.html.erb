@@ -1,0 +1,8 @@
+<h3>Editing Boolio <span class="subheader"><%= @boolio.api_id %></span></h3>
+
+<%= render 'form' %>
+
+<div class="button-group">
+  <%= link_to @boolio, class: 'button' do %> <i class="fi-magnifying-glass"></i> Show <% end %>
+  <%= link_to boolios_path, class: 'button hollow' do %> <i class="fi-arrow-left"></i> Back <% end %>
+</div>
