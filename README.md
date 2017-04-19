@@ -1,3 +1,22 @@
+# Skills Assessment - (a.k.a. how awesome are you?)
+
+The purpose behind this skills Assessment is to give us an example of your work. We understand that coding in a room full of people w/out your computer, bookmarks, editors, gaming consoles and fidget cubes can be misleading to your actual skill level. With this assessment we place the comfort back into your hands to write how and when you like to do so.
+
+The idea is to take this application which is ready to be deployed to a server (provided by us, or you can use your own) and:
+1) get the server capable of hosting the application
+2) get the application onto the server
+3) get the appication running and available for the whole world to view.
+
+## Software Requirements
+- [Ruby 2.3.1](https://www.ruby-lang.org/en/)
+- [bundler gem](https://rubygems.org/gems/bundler/versions/1.14.6)
+
+## Getting the application to run
+
+    $ bundle install # install necessary application dependencies
+    $ foreman start # Runs the application server
+
+# The application its self
 ## Ruby on Rails API Consumption assignment
 This repository was create to demonstrate an API Consumption application.
 
@@ -11,3 +30,5 @@ There is also a small interface with [giphy's api](http://api.giphy.com) which w
 
 ### Design
 I've never claimed to be amazing at UX/UI, so I used [zurb's foundation](http://foundation.zurb.com) for some quick and dirty styles.
+
+
