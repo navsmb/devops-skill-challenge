@@ -5,7 +5,7 @@ class Boolio < ActiveRecord::Base
   before_save :update_baas
   before_destroy :destroy_baas
 
-  @@base_url = 'https://api.booleans.io'
+  @@base_url = ENV["BOOL_API_URL"]
 
   def verify_with_api
 

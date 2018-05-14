@@ -1,0 +1,16 @@
+version: "3"
+services:
+  boolio-ui:
+    build:
+      context: .
+    networks:
+      - boolio
+    ports:
+      - 4001:4000
+    volumes:
+      - ./:/usr/src/app
+    environment:
+      BOOL_API_URL: http://boolio:4000/booleans/
+networks:
+  boolio:
+    external: true
