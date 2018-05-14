@@ -13,14 +13,24 @@ The idea is to take this application which is ready to be deployed to a server (
 
 ## Getting the application to run
 
+Environment configurations
+
+    BOOL_API_URL="<FULL_URL_PATH>"
+
+Pre-run commands
+
+    $ cp config/secrets.yml.example config/secrets.yml # setup secrets for the repo - that aren't very secret
     $ bundle install # install necessary application dependencies
-    $ foreman start # Runs the application server
+
+Running the service
+
+    $ foreman start
 
 # The application its self
 ## Ruby on Rails API Consumption assignment
 This repository was create to demonstrate an API Consumption application.
 
-### Booleans.io
+### Booleans.io - this service has gone away :-(
 The API that is being consumed is from [https://booleans.io](https://booleans.io) (Booleans as a Service - Baas) Because everyone needs to use a service to store their boolean values :-).
 
 I ended up using [httparty](https://github.com/jnunemaker/httparty) for the API consuption, along side some model callbacks. I originally looked at using [ActiveRestClient](https://github.com/whichdigital/active-rest-client) to provide "model" like functionality, but that was a joke. The model being used is keeping a record of the booleans created, but the value in the database is compared to the value via the BaaS when a specific boolean is viewed.
