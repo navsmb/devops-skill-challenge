@@ -29,7 +29,7 @@ class BooliosController < ApplicationController
       # set image from returned results
       @image = json.data[0].images if json.data.count > 0
     end
-    
+
   end
 
   # GET /boolios/new
@@ -47,7 +47,7 @@ class BooliosController < ApplicationController
   def create
 
     # create local record (to keep for later purposes)
-    @boolio = Boolio.new( 
+    @boolio = Boolio.new(
       val: boolio_params[:val] == '1'
     )
 

@@ -5,7 +5,7 @@ class Boolio < ActiveRecord::Base
   before_save :update_baas
   before_destroy :destroy_baas
 
-  @@base_url = 'https://api.booleans.io'
+  @@base_url = ENV["BOOL_API_URL"]
 
   def verify_with_api
 
@@ -31,11 +31,12 @@ class Boolio < ActiveRecord::Base
 
       # create boolean
       response = HTTParty.post( @@base_url,
-        body: { val: self.val }
+        headers: { "Content-Type" => "application/json" },
+        body: { val: self.val }.to_json
       )
 
       # Return false if unsuccessful
-      unless response.code == 200
+      unless response.code == 201
         return false
       end
 
@@ -53,7 +54,8 @@ class Boolio < ActiveRecord::Base
 
       # update boolean
       response = HTTParty.put( @@base_url + '/' + self.api_id,
-        body: { val: self.val }
+        headers: { "Content-Type" => "application/json" },
+        body: { val: self.val }.to_json
       )
 
       # Return false if unsuccessful
